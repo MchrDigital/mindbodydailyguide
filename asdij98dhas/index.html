@@ -95,7 +95,7 @@
         .image-placeholder {
             width: 100%;
             max-width: 600px;
-            margin: 50px auto;
+            margin: 50px auto 20px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -105,6 +105,78 @@
             max-width: 100%;
             height: auto;
             display: block;
+        }
+        
+        .digital-product-label {
+            text-align: center;
+            font-family: Roboto, sans-serif;
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+        
+        .price-download-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+        
+        .download-arrow {
+            font-size: 40px;
+            color: #4CAF50;
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+        
+        .price-tag {
+            font-family: Poppins, sans-serif;
+            font-size: 48px;
+            font-weight: 700;
+            color: #FF5722;
+        }
+        
+        .checkout-button {
+            display: block;
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto 50px;
+            padding: 20px 40px;
+            background: linear-gradient(135deg, #FF5722 0%, #FF7043 100%);
+            color: #fff;
+            text-align: center;
+            text-decoration: none;
+            font-family: Poppins, sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 87, 34, 0.4);
+        }
+        
+        .checkout-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 87, 34, 0.6);
+            background: linear-gradient(135deg, #FF7043 0%, #FF5722 100%);
+        }
+        
+        .checkout-button:active {
+            transform: translateY(-1px);
         }
         
         .footer-section {
@@ -188,7 +260,16 @@
             
             .image-placeholder {
                 max-width: 100%;
-                margin: 30px auto;
+                margin: 30px auto 15px;
+            }
+            
+            .price-tag {
+                font-size: 36px;
+            }
+            
+            .checkout-button {
+                font-size: 20px;
+                padding: 18px 30px;
             }
             
             .disclaimer-section {
@@ -269,6 +350,20 @@
         <div class="image-placeholder">
             <img src="images/Neuro_Honey_protocol__2_-removebg-preview.png" alt="Neuro-Honey Blender Product" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
         </div>
+        
+        <!-- Digital Product Label -->
+        <div class="digital-product-label">
+            Digital Product
+        </div>
+        
+        <!-- Price and Download Arrow -->
+        <div class="price-download-container">
+            <div class="download-arrow">⬇</div>
+            <div class="price-tag">$49</div>
+        </div>
+        
+        <!-- Checkout Button -->
+        <a href="#" class="checkout-button">CHECKOUT NOW</a>
     </div>
     
     <!-- Footer Section -->
