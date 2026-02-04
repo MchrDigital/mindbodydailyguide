@@ -194,6 +194,29 @@ digistorePromocode( { "product_id": 663197, "adjust_all_urls": true, "adjust_dom
             width: 100%;
         }
         
+        .no-thanks-button {
+            display: block;
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto 30px;
+            padding: 15px 20px;
+            background: #2c1654;
+            color: #ffeb3b;
+            text-align: center;
+            text-decoration: underline;
+            font-family: Roboto, sans-serif;
+            font-size: 16px;
+            font-weight: 400;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .no-thanks-button:hover {
+            background: #3d1f73;
+            color: #fff59d;
+        }
+        
         .footer-links {
             background: #fff;
             padding: 20px;
@@ -284,6 +307,11 @@ digistorePromocode( { "product_id": 663197, "adjust_all_urls": true, "adjust_dom
             .checkout-button {
                 font-size: 20px;
                 padding: 18px 30px;
+            }
+            
+            .no-thanks-button {
+                font-size: 14px;
+                padding: 12px 15px;
             }
             
             .disclaimer-section {
@@ -386,12 +414,15 @@ digistorePromocode( { "product_id": 663197, "adjust_all_urls": true, "adjust_dom
             <div class="price-tag">$49</div>
         </div>
         
-        <!-- Checkout Button -->
-        <a href="" class="checkout-button">CHECKOUT NOW</a>
+        <!-- https://www.digistore24.com/answer/yes?template=light -->
+        <a href="" class="checkout-button">ADD TO MY ORDER</a>
     </div>
     
     <!-- Footer Section -->
     <div class="footer-section">
+        <!-- https://www.digistore24.com/answer/no -->
+        <a href="" class="no-thanks-button">No thanks. I don't want to have a healthier diet.</a>
+        
         <!-- Footer Links -->
         <div class="footer-links">
             <a href="https://www.dailybodyandmind.site/terms-nhb" target="_blank" rel="noopener noreferrer">
