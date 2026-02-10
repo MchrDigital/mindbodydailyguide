@@ -109,41 +109,37 @@
         .image-placeholder {
             width: 100%;
             max-width: 100%;
-            margin: 50px auto 20px;
+            margin: 50px auto 40px; /* Aumentado margem inferior para o selo não cortar */
             display: flex;
             align-items: center;
             justify-content: center;
         }
         
-        .image-placeholder img {
-            max-width: 100%;
-            width: 700px;
-            height: auto;
-            display: block;
-        }
-        
+        /* --- INÍCIO DA CORREÇÃO DO SELO --- */
         .product-wrapper {
-            position: relative;
-            display: inline-block;
+            position: relative; /* Define o ponto de referência para o selo absoluto */
+            display: inline-block; /* O container se ajusta ao tamanho da imagem */
             max-width: 100%;
         }
         
-        .image-placeholder img.main-product {
+        /* Ajuste para garantir que a imagem principal se comporte bem dentro do wrapper */
+        .product-wrapper img.main-product {
             max-width: 100%;
-            width: 700px;
+            width: 700px; /* Mantém o tamanho original desejado */
             height: auto;
             display: block;
         }
         
         .seal-badge {
             position: absolute;
-            bottom: 10px;
-            right: 10px;
-            width: 110px;
+            bottom: -10px; /* Posiciona no canto inferior, ligeiramente para fora */
+            right: -10px;  /* Posiciona no canto direito, ligeiramente para fora */
+            width: 110px;  /* Tamanho Desktop */
             height: auto;
             z-index: 10;
-            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.2));
+            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.2)); /* Sombra para destaque */
         }
+        /* --- FIM DA CORREÇÃO DO SELO --- */
         
         .digital-product-label {
             text-align: center;
@@ -341,11 +337,14 @@
             
             .image-placeholder {
                 max-width: 100%;
-                margin: 30px auto 15px;
+                margin: 30px auto 30px; /* Ajuste de margem mobile */
             }
             
-            .image-placeholder img {
-                width: 100%;
+            /* Ajuste do tamanho e posição do selo no Mobile */
+            .seal-badge {
+                width: 80px;
+                bottom: -5px;
+                right: -5px;
             }
             
             .price-tag {
@@ -381,22 +380,18 @@
                     <div class="a-c-cont-e7d2d32 a-r a-c-cont">
                         <div class="a-r a-html a-e-cont a-u-2 a-html-e7d2d32 atomicat-element-container-e7d2d32 atomicat-html" data-hex="d2gUN9MYR">
                             <div class="a-i-e-cont">
-                                <!-- Scripts -->
                                 <script src="js/latest.js" data-utmify-prevent-xcod-sck="" data-utmify-prevent-subids="" async="" defer="defer"></script>
                                 <script src="js/digistore.js"></script>
                                 <script>
                                     digistoreUpsell()
                                 </script>
                                 
-                                <!-- Digistore24 Trusted Badge -->
                                 <script type="text/javascript" src="https://www.digistore24.com/trusted-badge/43881/3Jpw2cCSgdytTuZ/salespage"></script>
                                 
-                                <!-- Hero Image -->
                                 <div class="hero-image-container">
                                     <img src="https://images.unsplash.com/photo-1513628253939-010e64ac66cd?w=1200&h=400&fit=crop&q=80" alt="Cozy bedroom setting with soft lighting">
                                 </div>
                                 
-                                <!-- Main Content -->
                                 <div class="content-container">
                                     <h1>LEARN ABOUT SLEEP OPTIMIZATION</h1>
                                     <h1 class="subtitle">Educational guide covering sleep hygiene, environment optimization, and evidence-based practices.</h1>
@@ -459,38 +454,33 @@
                                     
                                     <p>Click below to add this educational guide to your order.</p>
                                     
-                                    <!-- Product Image -->
                                     <div class="image-placeholder">
-                                        <img src="images/Sleep.png" alt="Recovery Elite Sleep Education Guide">
-                                        <img src="images/selo.png" alt="Selo de Garantia" class="seal-badge">
+                                        <div class="product-wrapper">
+                                            <img src="images/Sleep.png" alt="Recovery Elite Sleep Education Guide" class="main-product">
+                                            <img src="images/selo.png" alt="Selo de Garantia" class="seal-badge">
+                                        </div>
                                     </div>
                                     
-                                    <!-- Digital Product Label -->
                                     <div class="digital-product-label">Digital Educational Guide</div>
                                     
-                                    <!-- Price and Download Arrow -->
                                     <div class="price-download-container">
                                         <div class="download-arrow">⬇</div>
                                         <div class="price-tag">$29</div>
                                     </div>
                                     
-                                    <!-- Checkout Button -->
                                     <a href="" class="checkout-button">ADD TO MY ORDER</a>
                                     
                                     <p class="recurring-notice">After this payment, there will be a recurring charge of $29/month</p>
                                 </div>
                                 
-                                <!-- Footer Section -->
                                 <div class="footer-section">
                                     <a href="" class="no-thanks-button">No thanks. I'm not interested in this educational guide.</a>
                                     
-                                    <!-- Footer Links -->
                                     <div class="footer-links">
                                         <a href="https://www.dailybodyandmind.site/terms-nhb" target="_blank" rel="noopener noreferrer"><strong>| Terms |</strong></a>
                                         <a href="https://www.dailybodyandmind.site/privacy-nhb" target="_blank" rel="noopener noreferrer"><strong>Privacy |</strong></a>
                                     </div>
                                     
-                                    <!-- Disclaimer Section -->
                                     <div class="disclaimer-section">
                                         <h1>DISCLAIMER</h1>
                                         
@@ -527,7 +517,6 @@
         </div>
     </div>
     
-    <!-- Scripts de rodapé -->
     <script type="text/javascript" defer="defer">
         document.body.appendChild(Object.assign(document.createElement("script"), {
             src: "https://cdn.atomicatpages.net/cdn/atomicpixel.js?cache=" + Date.now(),
