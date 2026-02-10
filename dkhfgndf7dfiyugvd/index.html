@@ -1,15 +1,12 @@
-jjj <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR" dir="ltr">
 <head>
     <script src="https://www.digistore24-scripts.com/service/digistore.js"></script>
-<script type="text/javascript">
-digistorePromocode( { "product_id": 663197, "adjust_all_urls": true, "adjust_domain": true } );
-</script>
+    <script type="text/javascript">
+    digistorePromocode( { "product_id": 663197, "adjust_all_urls": true, "adjust_domain": true } );
+    </script>
 
-    <!-- Begin of Digistore24 Trusted Badge Code -->
-<script type="text/javascript" src="https://www.digistore24.com/trusted-badge/43528/F1HErBb5ERe0T9E/salespage"></script>
-<!-- End of Digistore24 Trusted Badge Code -->
-    
+    <script type="text/javascript" src="https://www.digistore24.com/trusted-badge/43528/F1HErBb5ERe0T9E/salespage"></script>
     <title>Healthy Recipe App - Daily Brain Nutrition Assistant</title>
     <meta name="robots" content="index, follow">
     <meta charset="utf-8">
@@ -104,43 +101,37 @@ digistorePromocode( { "product_id": 663197, "adjust_all_urls": true, "adjust_dom
         .image-placeholder {
             width: 100%;
             max-width: 100%;
-            margin: 50px auto 20px;
+            margin: 50px auto 40px;
             display: flex;
             align-items: center;
             justify-content: center;
         }
+
+        /* --- NOVO CSS PARA O SELO --- */
+        .product-wrapper {
+            position: relative; /* Necessário para posicionar o selo */
+            display: inline-block;
+            max-width: 100%;
+        }
         
-        .image-placeholder img {
+        .image-placeholder img.main-product {
             max-width: 100%;
             width: 700px;
             height: auto;
             display: block;
         }
-        /* --- INÍCIO DA CORREÇÃO DO SELO --- */
-        .product-wrapper {
-            position: relative; /* Define o ponto de referência para o selo absoluto */
-            display: inline-block; /* O container se ajusta ao tamanho da imagem */
-            max-width: 100%;
-        }
-        
-        /* Ajuste para garantir que a imagem principal se comporte bem dentro do wrapper */
-        .product-wrapper img.main-product {
-            max-width: 100%;
-            width: 700px; /* Mantém o tamanho original desejado */
-            height: auto;
-            display: block;
-        }
-        
+
+        /* AJUSTE FEITO AQUI PARA DESKTOP */
         .seal-badge {
             position: absolute;
-            bottom: -10px; /* Posiciona no canto inferior, ligeiramente para fora */
-            right: -10px;  /* Posiciona no canto direito, ligeiramente para fora */
-            width: 110px;  /* Tamanho Desktop */
+            bottom: 10px; /* Mudado de -15px para 10px para subir */
+            right: 10px;  /* Mudado de -15px para 10px para aproximar */
+            width: 110px; 
             height: auto;
             z-index: 10;
-            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.2)); /* Sombra para destaque */
+            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.2));
         }
-        /* --- FIM DA CORREÇÃO DO SELO --- */
+        /* --------------------------- */
         
         .digital-product-label {
             text-align: center;
@@ -327,11 +318,14 @@ digistorePromocode( { "product_id": 663197, "adjust_all_urls": true, "adjust_dom
             
             .image-placeholder {
                 max-width: 100%;
-                margin: 30px auto 15px;
+                margin: 30px auto 30px;
             }
             
-            .image-placeholder img {
-                width: 100%;
+            /* AJUSTE FEITO AQUI PARA MOBILE */
+            .seal-badge {
+                width: 80px; 
+                bottom: 5px; /* Mudado de -10px para 5px */
+                right: 5px;  /* Mudado de -5px para 5px */
             }
             
             .price-tag {
@@ -359,12 +353,10 @@ digistorePromocode( { "product_id": 663197, "adjust_all_urls": true, "adjust_dom
     </style>
 </head>
 <body>
-    <!-- Header Advertorial -->
     <div class="advertorial-header">
         <h1>ADVERTORIAL</h1>
     </div>
     
-    <!-- Main Content -->
     <div class="content-container">
         <h1>TRY IT TODAY!</h1>
         
@@ -416,7 +408,7 @@ digistorePromocode( { "product_id": 663197, "adjust_all_urls": true, "adjust_dom
         
         <p>For less than $2 a day—which doesn't even cover the cost of a cup of coffee—you get unlimited access to your personal brain nutrition assistant.</p>
         
-        <p>Just $29/month, and you can cancel anytime.</p>
+        <p>Just $49/month, and you can cancel anytime.</p>
         
         <p>No long-term commitments. No hidden fees. No hassle.</p>
         
@@ -432,34 +424,29 @@ digistorePromocode( { "product_id": 663197, "adjust_all_urls": true, "adjust_dom
         
         <p>Start your personalized nutrition journey today for just $29/month!</p>
         
-        <!-- Product Image -->
         <div class="image-placeholder">
-            <img src="images/HRA IMAGEM - MOCKUP 2.png" alt="Healthy Recipe App" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
-            <img src="images/selo.png" alt="Selo de Garantia" class="seal-badge">
+            <div class="product-wrapper">
+                <img src="images/HRA IMAGEM - MOCKUP 2.png" alt="Healthy Recipe App" class="main-product">
+                <img src="images/selo.png" alt="Selo de Garantia" class="seal-badge">
+            </div>
         </div>
         
-        <!-- Digital Product Label -->
         <div class="digital-product-label">
             Digital Product
         </div>
         
-        <!-- Price and Download Arrow -->
         <div class="price-download-container">
             <div class="download-arrow">⬇</div>
             <div class="price-tag">$29</div>
         </div>
         
-        <!-- https://www.digistore24.com/answer/yes?template=light -->
-        <a href="https://www.digistore24.com/answer/yes?template=light&product=667134" class="checkout-button">ADD TO MY ORDER</a>
+        <a href="https://www.digistore24.com/answer/yes?template=light&product=667130" class="checkout-button">ADD TO MY ORDER</a>
     </div>
     <p class="recurring-notice">After this payment, there will be a recurring charge of $29/month</p>
     
-    <!-- Footer Section -->
     <div class="footer-section">
-        <!-- https://www.digistore24.com/answer/no -->
         <a href="https://www.digistore24.com/answer/no" class="no-thanks-button">No thanks. I don't want to have a healthier diet.</a>
         
-        <!-- Footer Links -->
         <div class="footer-links">
             <a href="https://www.dailybodyandmind.site/terms-nhb" target="_blank" rel="noopener noreferrer">
                 <strong>| Terms |</strong>
@@ -469,7 +456,6 @@ digistorePromocode( { "product_id": 663197, "adjust_all_urls": true, "adjust_dom
             </a>
         </div>
         
-        <!-- Disclaimer Section -->
         <div class="disclaimer-section">
             <h1>DISCLAIMER</h1>
             
