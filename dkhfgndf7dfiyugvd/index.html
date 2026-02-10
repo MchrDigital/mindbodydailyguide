@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+jjj <!DOCTYPE html>
 <html lang="pt-BR" dir="ltr">
 <head>
     <script src="https://www.digistore24-scripts.com/service/digistore.js"></script>
@@ -116,6 +116,31 @@ digistorePromocode( { "product_id": 663197, "adjust_all_urls": true, "adjust_dom
             height: auto;
             display: block;
         }
+        /* --- INÍCIO DA CORREÇÃO DO SELO --- */
+        .product-wrapper {
+            position: relative; /* Define o ponto de referência para o selo absoluto */
+            display: inline-block; /* O container se ajusta ao tamanho da imagem */
+            max-width: 100%;
+        }
+        
+        /* Ajuste para garantir que a imagem principal se comporte bem dentro do wrapper */
+        .product-wrapper img.main-product {
+            max-width: 100%;
+            width: 700px; /* Mantém o tamanho original desejado */
+            height: auto;
+            display: block;
+        }
+        
+        .seal-badge {
+            position: absolute;
+            bottom: -10px; /* Posiciona no canto inferior, ligeiramente para fora */
+            right: -10px;  /* Posiciona no canto direito, ligeiramente para fora */
+            width: 110px;  /* Tamanho Desktop */
+            height: auto;
+            z-index: 10;
+            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.2)); /* Sombra para destaque */
+        }
+        /* --- FIM DA CORREÇÃO DO SELO --- */
         
         .digital-product-label {
             text-align: center;
@@ -410,6 +435,7 @@ digistorePromocode( { "product_id": 663197, "adjust_all_urls": true, "adjust_dom
         <!-- Product Image -->
         <div class="image-placeholder">
             <img src="images/HRA IMAGEM - MOCKUP 2.png" alt="Healthy Recipe App" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
+            <img src="images/selo.png" alt="Selo de Garantia" class="seal-badge">
         </div>
         
         <!-- Digital Product Label -->
