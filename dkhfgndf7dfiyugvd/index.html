@@ -175,6 +175,48 @@
             color: #FF5722;
         }
         
+        .subscription-checkbox-container {
+            max-width: 500px;
+            margin: 0 auto 20px;
+            padding: 20px;
+            background: #fff3e0;
+            border: 2px solid #ff9800;
+            border-radius: 10px;
+        }
+        
+        .checkbox-wrapper {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            cursor: pointer;
+        }
+        
+        .checkbox-wrapper input[type="checkbox"] {
+            width: 22px;
+            height: 22px;
+            min-width: 22px;
+            cursor: pointer;
+            margin-top: 2px;
+        }
+        
+        .checkbox-wrapper label {
+            font-family: Roboto, sans-serif;
+            font-size: 15px;
+            font-weight: 500;
+            color: #333;
+            cursor: pointer;
+            line-height: 1.5;
+        }
+        
+        .cancel-anytime {
+            text-align: center;
+            font-family: Roboto, sans-serif;
+            font-size: 16px;
+            color: #4caf50;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
         .checkout-button {
             display: block;
             width: 100%;
@@ -195,13 +237,20 @@
             box-shadow: 0 4px 15px rgba(255, 87, 34, 0.4);
         }
         
-        .checkout-button:hover {
+        .checkout-button:disabled {
+            background: #cccccc;
+            cursor: not-allowed;
+            box-shadow: none;
+            opacity: 0.6;
+        }
+        
+        .checkout-button:hover:not(:disabled) {
             transform: translateY(-3px);
             box-shadow: 0 6px 20px rgba(255, 87, 34, 0.6);
             background: linear-gradient(135deg, #FF7043 0%, #FF5722 100%);
         }
         
-        .checkout-button:active {
+        .checkout-button:active:not(:disabled) {
             transform: translateY(-1px);
         }
         
@@ -332,6 +381,18 @@
                 font-size: 36px;
             }
             
+            .subscription-checkbox-container {
+                padding: 15px;
+            }
+            
+            .checkbox-wrapper label {
+                font-size: 14px;
+            }
+            
+            .cancel-anytime {
+                font-size: 14px;
+            }
+            
             .checkout-button {
                 font-size: 20px;
                 padding: 18px 30px;
@@ -440,7 +501,18 @@
             <div class="price-tag">$29</div>
         </div>
         
-        <a href="https://www.digistore24.com/answer/yes?template=light&product=667130" class="checkout-button">ADD TO MY ORDER</a>
+        <div class="subscription-checkbox-container">
+            <div class="checkbox-wrapper">
+                <input type="checkbox" id="subscription-confirm" name="subscription-confirm">
+                <label for="subscription-confirm">
+                    I understand and agree that after this payment, there will be a recurring charge of $29/month for continued access to the Healthy Recipe App.
+                </label>
+            </div>
+        </div>
+        
+        <div class="cancel-anytime">✓ Cancel at anytime</div>
+        
+        <a href="https://www.digistore24.com/answer/yes?template=light&product=667130" class="checkout-button" id="checkout-btn">ADD TO MY ORDER</a>
     </div>
     <p class="recurring-notice">After this payment, there will be a recurring charge of $29/month</p>
     
@@ -476,5 +548,28 @@
             <p><strong>ADVERTISING DISCLOSURE:</strong> This website and the referenced products and services are advertisements. This site is not a news publication. All photos of individuals used on this site are models. The owner of this site and the referenced products and services merely provide a platform for consumers to obtain and compare information. Memory loss is achieved as part of a reduced-calorie diet and exercise program.</p>
         </div>
     </div>
+    
+    <script type="text/javascript">
+        // Checkbox functionality to enable/disable button
+        const checkbox = document.getElementById('subscription-confirm');
+        const checkoutBtn = document.getElementById('checkout-btn');
+        
+        // Initially disable the button
+        checkoutBtn.style.pointerEvents = 'none';
+        checkoutBtn.style.opacity = '0.6';
+        checkoutBtn.style.cursor = 'not-allowed';
+        
+        checkbox.addEventListener('change', function() {
+            if (this.checked) {
+                checkoutBtn.style.pointerEvents = 'auto';
+                checkoutBtn.style.opacity = '1';
+                checkoutBtn.style.cursor = 'pointer';
+            } else {
+                checkoutBtn.style.pointerEvents = 'none';
+                checkoutBtn.style.opacity = '0.6';
+                checkoutBtn.style.cursor = 'not-allowed';
+            }
+        });
+    </script>
 </body>
 </html>
