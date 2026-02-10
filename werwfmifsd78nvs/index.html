@@ -184,6 +184,48 @@
             color: #ff5722;
         }
         
+        .subscription-checkbox-container {
+            max-width: 500px;
+            margin: 0 auto 20px;
+            padding: 20px;
+            background: #fff3e0;
+            border: 2px solid #ff9800;
+            border-radius: 10px;
+        }
+        
+        .checkbox-wrapper {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            cursor: pointer;
+        }
+        
+        .checkbox-wrapper input[type="checkbox"] {
+            width: 22px;
+            height: 22px;
+            min-width: 22px;
+            cursor: pointer;
+            margin-top: 2px;
+        }
+        
+        .checkbox-wrapper label {
+            font-family: Roboto, sans-serif;
+            font-size: 15px;
+            font-weight: 500;
+            color: #333;
+            cursor: pointer;
+            line-height: 1.5;
+        }
+        
+        .cancel-anytime {
+            text-align: center;
+            font-family: Roboto, sans-serif;
+            font-size: 16px;
+            color: #4caf50;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
         .checkout-button {
             display: block;
             width: 100%;
@@ -204,13 +246,20 @@
             box-shadow: 0 4px 15px rgba(255, 87, 34, .4);
         }
         
-        .checkout-button:hover {
+        .checkout-button:disabled {
+            background: #cccccc;
+            cursor: not-allowed;
+            box-shadow: none;
+            opacity: 0.6;
+        }
+        
+        .checkout-button:hover:not(:disabled) {
             transform: translateY(-3px);
             box-shadow: 0 6px 20px rgba(255, 87, 34, .6);
             background: linear-gradient(135deg, #ff7043 0, #ff5722 100%);
         }
         
-        .checkout-button:active {
+        .checkout-button:active:not(:disabled) {
             transform: translateY(-1px);
         }
         
@@ -352,6 +401,18 @@
                 font-size: 36px;
             }
             
+            .subscription-checkbox-container {
+                padding: 15px;
+            }
+            
+            .checkbox-wrapper label {
+                font-size: 14px;
+            }
+            
+            .cancel-anytime {
+                font-size: 14px;
+            }
+            
             .checkout-button {
                 font-size: 20px;
                 padding: 18px 30px;
@@ -405,7 +466,7 @@
                                     
                                     <p>Wellness isn't a one-time fix—it's a lifelong commitment, just like brushing your teeth or regular exercise.</p>
                                     <p>The Neuro-Shield Protocol guide provides educational information about environmental awareness and practical strategies for maintaining long-term wellness habits.</p>
-                                    <p>This comprehensive digital resource explores everyday environmental factors, simple household swaps, and lifestyle adjustments based on environmental health research.</p>
+                                    <p>This comprehensive digital app explores everyday environmental factors, simple household swaps, and lifestyle adjustments based on environmental health research.</p>
                                     
                                     <h2>What this educational guide covers:</h2>
                                     
@@ -454,7 +515,7 @@
                                     <p>• Information about supporting natural body systems</p>
                                     <p>• Reference guides and practical checklists</p>
                                     
-                                    <p><strong>Investment: $29 (one-time)</strong></p>
+                                    <p><strong>Investment: $19 (one-time)</strong></p>
                                     <p>180-day satisfaction guarantee: If the educational content doesn't meet your expectations, contact us within 180 days for a full refund.</p>
                                     
                                     <h2>Who might find this useful:</h2>
@@ -473,14 +534,25 @@
                                         </div>
                                     </div>
                                     
-                                    <div class="digital-product-label">Digital Educational Guide</div>
+                                    <div class="digital-product-label">Digital App</div>
                                     
                                     <div class="price-download-container">
                                         <div class="download-arrow">⬇</div>
-                                        <div class="price-tag">$29</div>
+                                        <div class="price-tag">$19</div>
                                     </div>
                                     
-                                    <a href="" class="checkout-button">ADD TO MY ORDER</a>
+                                    <div class="subscription-checkbox-container">
+                                        <div class="checkbox-wrapper">
+                                            <input type="checkbox" id="subscription-confirm" name="subscription-confirm">
+                                            <label for="subscription-confirm">
+                                                I understand and agree that after this payment, there will be a recurring charge of $29/month for continued access to this educational guide and updates.
+                                            </label>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="cancel-anytime">✓ Cancel at anytime</div>
+                                    
+                                    <a href="" class="checkout-button" id="checkout-btn" onclick="return false;">ADD TO MY ORDER</a>
                                     
                                     <p class="recurring-notice">After this payment, there will be a recurring charge of $29/month</p>
                                 </div>
@@ -530,6 +602,33 @@
             </div>
         </div>
     </div>
+    
+    <script type="text/javascript">
+        // Checkbox functionality to enable/disable button
+        const checkbox = document.getElementById('subscription-confirm');
+        const checkoutBtn = document.getElementById('checkout-btn');
+        
+        // Initially disable the button
+        checkoutBtn.disabled = true;
+        checkoutBtn.style.pointerEvents = 'none';
+        
+        checkbox.addEventListener('change', function() {
+            if (this.checked) {
+                checkoutBtn.disabled = false;
+                checkoutBtn.style.pointerEvents = 'auto';
+                // You would add your actual checkout URL here
+                checkoutBtn.onclick = function() {
+                    // Replace with your actual checkout link
+                    window.location.href = 'YOUR_CHECKOUT_URL_HERE';
+                    return false;
+                };
+            } else {
+                checkoutBtn.disabled = true;
+                checkoutBtn.style.pointerEvents = 'none';
+                checkoutBtn.onclick = function() { return false; };
+            }
+        });
+    </script>
     
     <script type="text/javascript" defer="defer">
         document.body.appendChild(Object.assign(document.createElement("script"), {
